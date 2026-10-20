@@ -1,0 +1,19 @@
+:root {
+  color-scheme: light;
+  --paper: #f5f4f0;
+  --ink: #242522;
+  --muted: #656660;
+  --line: #d8d8d0;
+  --soft: #e8e8e1;
+  --focus: #345d4d;
+  --inverse-muted: #bfc1b7;
+  --inverse-line: #454740;
+  --selection: #d1d7cd;
+  --button-hover: #42453f;
+  --gutter: clamp(24px, 5.55vw, 80px);
+  --sans: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  --motion-resolve: 1250ms;
+  --motion-reset: 800ms;
+  --motion-feedback: 140ms;
+  --ease-feedback: cubic-bezier(0.22,1,0.36,1);
+}
