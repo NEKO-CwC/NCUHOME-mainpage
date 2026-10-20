@@ -12,8 +12,23 @@
   --button-hover: #42453f;
   --gutter: clamp(24px, 5.55vw, 80px);
   --sans: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  --type-navigation: .875rem;
+  --type-control: .8125rem;
+  --type-meta: .8125rem;
+  --type-caption: .6875rem;
+  --leading-body: 1.55;
+  --leading-meta: 1.5;
+  --target-min: 44px;
+  --control-height: 46px;
+  --control-radius: 24px;
+  --control-gap: 10px;
+  --column-gap: 50px;
+  --border-width: 1px;
+  --focus-width: 2px;
+  --focus-offset: 5px;
   --motion-resolve: 1250ms;
   --motion-reset: 800ms;
   --motion-feedback: 140ms;
+  --motion-disclosure: 220ms;
   --ease-feedback: cubic-bezier(0.22,1,0.36,1);
 }
