@@ -38,6 +38,7 @@ a, button, p, h1, h2, h3, h4, dt, dd, .discipline { overflow-wrap: anywhere; }
 .opening h1 { font-size: var(--type-display); line-height: 1.08; letter-spacing: -.055em; text-wrap: initial; }
 .supporting { max-inline-size: 25rem; color: var(--muted); font-size: var(--type-body); line-height: var(--leading-body); margin-block-start: 1.75rem; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-block-start: 2rem; font-size: var(--type-navigation); }
+.legal-note, .studio-text .legal-note { max-inline-size: 30rem; margin-block-start: 1.25rem; font-size: var(--type-meta); line-height: 1.5; color: var(--muted); }
 .object { min-inline-size: 0; margin: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
 .object-stage { min-block-size: 330px; aspect-ratio: 1.15; inline-size: 100%; position: relative; pointer-events: none; }
 .object-stage::after { content: ""; position: absolute; inline-size: 72%; block-size: 12%; inset-inline-start: 14%; inset-block-end: 5%; background: radial-gradient(ellipse, #25282020, #25282008 45%, transparent 70%); }
@@ -80,7 +81,10 @@ details[open] .indicator::after { transform: translate(-50%, -50%) rotate(0); }
 .booking-intro h2 { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.08; letter-spacing: -.05em; margin-block-start: 3rem; }
 .booking-description { margin-block-start: 1.75rem; max-inline-size: 24rem; font-size: 1.125rem; line-height: 1.55; }
 .preview-note { margin-block-start: 1.5rem; max-inline-size: 25rem; font-size: var(--type-navigation); line-height: 1.6; color: var(--inverse-muted); }
-.booking-intro .contact-link { font-size: var(--type-navigation); margin-block-start: 1.5rem; text-decoration-color: currentColor; }
+.contact-addresses { display: grid; gap: 1rem; margin-block-start: 1.5rem; max-inline-size: 100%; font-style: normal; }
+.contact-address { min-inline-size: 0; }
+.contact-address-label { display: block; font-size: var(--type-caption); line-height: 1.5; color: var(--inverse-muted); }
+.booking-intro .contact-link { display: block; max-inline-size: 100%; padding-block: .5rem; font-size: var(--type-navigation); text-decoration-color: currentColor; overflow-wrap: anywhere; }
 .booking-intro a:focus-visible, .footer-line a:focus-visible { outline-color: var(--paper); }
 .booking-panel { min-inline-size: 0; align-self: start; background: var(--paper); color: var(--ink); padding: clamp(1.25rem, 3vw, 2.5rem); border-radius: var(--field-radius); }
 .booking-progress { list-style: none; padding: 0 0 1.5rem; margin: 0 0 2rem; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; border-block-end: var(--border-width) solid var(--line); font-size: var(--type-meta); line-height: 1.5; color: var(--muted); }
@@ -117,9 +121,10 @@ select { padding-inline-end: 2rem; }
 .review-values bdi { white-space: pre-wrap; }
 .review-values .context-value { display: block; }
 .context-value dd { margin-block-start: .375rem; }
-.download-actions { margin-block-start: 2rem; }
-.download-actions .button { inline-size: 100%; }
-.download-actions .field-hint { text-align: center; }
+.email-actions { margin-block-start: 2rem; }
+.download-actions { margin-block-start: 1rem; }
+.email-actions .button, .download-actions .button { inline-size: 100%; }
+.email-actions .field-hint, .download-actions .field-hint { text-align: center; }
 .download-recovery { margin-block-start: 1rem; font-size: var(--type-navigation); }
 .download-recovery summary { cursor: pointer; text-decoration: underline; padding-block: .75rem; }
 .download-recovery pre { font-family: var(--sans); font-size: var(--type-meta); line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }

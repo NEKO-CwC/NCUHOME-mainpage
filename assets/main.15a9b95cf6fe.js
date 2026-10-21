@@ -1,9 +1,9 @@
-// Call request preview. Values stay in this page; there is no submission transport.
+// Prepare call requests for the visitor's email app and a matching text download.
 (() => {
   'use strict';
   const form = document.getElementById('booking-form');
   if (!form) return;
-  // Attach the no-send boundary before enabling any field or submit control.
+  // Keep step navigation local; the visitor sends the request in their email app.
   form.addEventListener('submit', event => {
     event.preventDefault();
     advance();
@@ -12,6 +12,11 @@
   const steps = [...document.querySelectorAll('[data-step]')];
   const progress = [...document.querySelectorAll('[data-progress]')];
   const status = document.getElementById('request-status');
+  const emailRequest = document.getElementById('email-request');
+  const emailHint = document.getElementById('email-request-hint');
+  const preparedEmailHint = emailHint.textContent;
+  const requestRecipient = 'customer@neko-cwc.com';
+  const requestSubject = 'NCUHOME LLC call request';
   const download = document.getElementById('download-request');
   const recovery = document.getElementById('download-recovery');
   const locale = navigator.languages?.[0] || navigator.language || document.documentElement.lang || 'en';
@@ -29,6 +34,7 @@
   const originalHelp = new Map(Object.values(fields).map(field => [field, field.getAttribute('aria-describedby') || '']));
   let currentStep = 1;
   let fileUrl = null;
+  let emailIncludesDetails = false;
 
   function validZone(zone) {
     try { new Intl.DateTimeFormat(locale, { timeZone: zone }).format(); return true; }
@@ -89,7 +95,7 @@
   function validate(group) {
     let firstInvalid = null;
     for (const field of group) {
-      // Normalize only surrounding whitespace; the same displayed values feed the file.
+      // Normalize only surrounding whitespace; the same values feed email and file.
       if (['text', 'email'].includes(field.type) || field.tagName === 'TEXTAREA') field.value = field.value.trim();
       const message = messageFor(field);
       setError(field, message);
@@ -110,7 +116,9 @@
     if (focus) steps.find(step => Number(step.dataset.step) === next).querySelector('h3').focus();
   }
   function revokeFile() {
-    if (fileUrl) URL.revokeObjectURL(fileUrl);
+    if (fileUrl) {
+      try { URL.revokeObjectURL(fileUrl); } catch { /* Email and copy remain usable. */ }
+    }
     fileUrl = null;
     download.removeAttribute('href');
   }
@@ -130,8 +138,8 @@
     text('review-company', value.company || 'Not added');
     text('review-context', value.context || 'Not added');
     const requestText = [
-      'NCUHOME — Call request',
-      'Prepared on this device. Not sent. No time is reserved.',
+      'NCUHOME LLC — Call request',
+      `Email this request to ${requestRecipient}. Our team will reply by email to confirm a time.`,
       '',
       `Project: ${projectLabels[value.project]}`,
       `Preferred date: ${formatDate(value.date)} (${value.date})`,
@@ -148,20 +156,36 @@
     ].join('\n');
     text('request-text', requestText);
     revokeFile();
-    recovery.hidden = true;
+    recovery.hidden = false;
     recovery.open = false;
+    emailRequest.href = `mailto:${requestRecipient}`;
+    emailHint.textContent = preparedEmailHint;
+    emailIncludesDetails = false;
+    const notices = [];
+    try {
+      // All entered values belong to one encoded body. Recipient and subject are fixed;
+      // newlines, ampersands, and header-like text can never become mail headers or HTML.
+      emailRequest.href = `mailto:${requestRecipient}?subject=${encodeURIComponent(requestSubject)}&body=${encodeURIComponent(requestText)}`;
+      emailIncludesDetails = true;
+    } catch {
+      recovery.open = true;
+      emailHint.textContent = `Opens your email app. Copy the complete request text below into your message to ${requestRecipient}.`;
+      notices.push(`Copy the request text below and email it to ${requestRecipient}. Our team will reply to confirm a time.`);
+    }
     download.hidden = false;
+    download.parentElement.hidden = false;
     try {
       fileUrl = URL.createObjectURL(new Blob([requestText], { type: 'text/plain;charset=utf-8' }));
       download.href = fileUrl;
       download.download = `ncuhome-call-request-${value.date}.txt`;
     } catch {
       download.hidden = true;
-      recovery.hidden = false;
+      download.parentElement.hidden = true;
       recovery.open = true;
+      notices.push(`The download is unavailable. Use Send request by email, or copy the text below and email it to ${requestRecipient}.`);
     }
     showStep(3);
-    if (!fileUrl) status.textContent = 'Unable to create the file. Copy the request text to keep it.';
+    status.textContent = notices.join(' ');
   }
   function advance() {
     if (currentStep === 3) return;
@@ -184,6 +208,8 @@
   }
   function edit(step) {
     revokeFile();
+    emailRequest.href = `mailto:${requestRecipient}`;
+    emailIncludesDetails = false;
     showStep(step);
   }
 
@@ -214,8 +240,13 @@
   document.getElementById('booking-back').addEventListener('click', () => showStep(1));
   document.getElementById('edit-project').addEventListener('click', () => edit(1));
   document.getElementById('edit-details').addEventListener('click', () => edit(2));
+  emailRequest.addEventListener('click', () => {
+    status.textContent = emailIncludesDetails
+      ? 'Finish sending the request in your email app. Our team will reply by email to confirm a time.'
+      : `Copy the request text into your email to ${requestRecipient} and send it there. Our team will reply to confirm a time.`;
+  });
   download.addEventListener('click', () => {
-    status.textContent = 'Your request file is ready. Check your downloads.';
+    status.textContent = `Your request file is ready. You can email it to ${requestRecipient}; our team will reply to confirm a time.`;
   });
   document.querySelectorAll('a[href="#book-call"]').forEach(link => {
     link.addEventListener('click', event => {
@@ -231,7 +262,7 @@
   form.dataset.ready = 'true';
 })();
 
-// Artwork is initialized after the independently scoped booking engine.
+// Keep the native primary contact link useful even if config is absent or invalid.
 (() => {
   'use strict';
   const destination = window.NCUHOME_CONFIG?.contactDestination;
