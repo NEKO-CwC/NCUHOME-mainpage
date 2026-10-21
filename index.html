@@ -4,59 +4,123 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f4f0">
-  <meta name="description" content="NCUHOME is an independent digital studio. We turn business problems into thoughtful websites and software. Define. Design. Build.">
+  <meta name="description" content="NCUHOME is an independent digital studio for founders and technology teams. We define, design and build thoughtful websites and custom software.">
   <title>NCUHOME — Independent digital studio</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="site-config.js"></script>
-  <script defer src="assets/main.js"></script>
+  <link rel="stylesheet" href="tokens.9eb9f638d1bc.css">
+  <link rel="stylesheet" href="styles.7a3cd53779a1.css">
+  <script defer src="site-config.6f02136e2870.js"></script>
+  <script defer src="assets/main.bd15872b294e.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="masthead" id="top">
-    <a class="wordmark" href="#top" aria-label="NCUHOME home">NCUHOME</a>
-    <nav class="navigation" aria-label="Main navigation"><a href="#studio">Studio</a><a href="#approach">Approach</a><a href="#contact">Contact</a></nav>
+    <a class="wordmark" href="#top" aria-label="NCUHOME home">NCUHOME<span class="wordmark-dot" aria-hidden="true"></span></a>
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="text-link" href="#studio">Studio</a>
+      <a class="text-link" href="#approach">Approach</a>
+      <a class="button button-outline nav-book" href="#book-call">Book a call <span class="directional" aria-hidden="true">↗</span></a>
+    </nav>
   </header>
   <main id="main" tabindex="-1">
     <section class="opening" aria-labelledby="opening-heading">
-      <p class="descriptor">Independent digital studio</p>
-      <figure class="object">
+      <div class="opening-copy">
+        <p class="descriptor entry">Independent digital studio</p>
+        <h1 class="entry" id="opening-heading">Digital products,<br>made deliberately.</h1>
+        <p class="supporting entry">We turn business problems into thoughtful websites and software. From the first question to the final detail.</p>
+        <div class="hero-actions entry">
+          <a class="button button-primary" href="#book-call">Book a call <span class="directional" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#studio">Explore the studio <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="object entry">
         <div class="object-stage">
-          <svg class="form-fallback" viewBox="0 0 600 500" role="img" aria-label="An abstract continuous folded loop">
-            <defs><linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8d9d2"/><stop offset=".42" stop-color="#91958a"/><stop offset=".65" stop-color="#383d34"/><stop offset="1" stop-color="#bfc2b7"/></linearGradient></defs>
-            <path d="M180 135 C250 66 389 80 437 172 C477 251 418 329 338 367 C244 411 124 329 131 247 C136 191 147 169 180 135Z" fill="none" stroke="url(#surface)" stroke-width="58"/>
+          <svg class="form-fallback" viewBox="0 0 600 500" role="img" aria-label="An abstract continuous loop taking a deliberate shape">
+            <defs>
+              <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8d9d2"/><stop offset=".38" stop-color="#9b9e94"/><stop offset=".7" stop-color="#383d34"/><stop offset="1" stop-color="#bfc2b7"/></linearGradient>
+            </defs>
+            <path id="form-path" d="M180 135 C250 66 389 80 437 172 C477 251 418 329 338 367 C244 411 124 329 131 247 C136 191 147 169 180 135Z" fill="none" stroke="url(#surface)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <canvas id="form-canvas" aria-hidden="true" hidden></canvas>
         </div>
-        <figcaption class="visually-hidden">One idea. A more deliberate shape.</figcaption>
+        <figcaption class="object-footer">
+          <div class="object-description"><span class="study-label">Form study / 01</span><p class="object-state" id="form-status" role="status" aria-atomic="true">One idea. A more deliberate shape.</p></div>
+          <div class="art-actions" id="object-controls" hidden>
+            <button class="button button-outline" id="resolve" type="button"><span aria-hidden="true">↻</span> Replay motion</button>
+            <button class="text-button" id="reset" type="button">Reset form</button>
+          </div>
+        </figcaption>
       </figure>
-      <div class="object-controls" id="object-controls" hidden>
-        <p class="object-state" id="form-status" role="status" aria-live="polite" aria-atomic="true">A possibility, waiting to take shape.</p>
-        <div class="control-row"><button class="resolve" id="resolve" type="button" aria-pressed="false">Give it form</button><button class="reset" id="reset" type="button" disabled>Reset</button></div>
-        <p class="object-caption">One idea. A more deliberate shape.</p>
-      </div>
-      <div class="opening-copy">
-        <h1 id="opening-heading"><span>Digital products,</span><span>made deliberately.</span></h1>
-        <p class="supporting">We turn business problems into thoughtful websites and software. From the first question to the final detail.</p>
-        <a class="studio-link" href="#studio">Explore the studio <span aria-hidden="true">↗</span></a>
-      </div>
+      <div class="hero-footnote"><span>For founders &amp; technology teams</span><span>Define. Design. Build.</span></div>
     </section>
-    <section class="studio" id="studio" aria-labelledby="studio-heading">
-      <p class="section-label">01 / Studio</p>
-      <div class="studio-text"><h2 id="studio-heading">A small studio.<br>A complete point of view.</h2><p>We work with founders and technology teams to define, design, and build digital products. Websites, custom software, and ideas of our own.</p></div>
+    <section class="studio section-shell" id="studio" aria-labelledby="studio-heading">
+      <p class="section-label reveal">01 / Studio</p>
+      <div class="studio-text reveal"><h2 id="studio-heading">A small studio.<br>A complete point of view.</h2><p>We work with founders and technology teams to define, design, and build digital products. Websites, custom software, and ideas of our own.</p><div class="service-line"><span>Websites</span><span>Custom software</span><span>Product design</span></div></div>
     </section>
-    <section class="approach" id="approach" aria-labelledby="approach-heading">
-      <div class="approach-top"><h2 class="section-label" id="approach-heading">02 / Approach</h2><div><p class="approach-title">From the first question<br>to the final detail.</p><p class="approach-note">Define. Design. Build. Open a discipline to look closer.</p></div></div>
-      <div class="process">
+    <section class="approach section-shell" id="approach" aria-labelledby="approach-heading">
+      <div class="approach-top reveal"><p class="section-label">02 / Approach</p><div><h2 id="approach-heading">From the first question<br>to the final detail.</h2><p class="approach-note">Three disciplines. One continuous process.</p></div></div>
+      <div class="process reveal">
         <details open><summary><span class="number" aria-hidden="true">01</span><span class="discipline">Define.</span><span class="indicator" aria-hidden="true"></span></summary><div class="process-body"><p>Start with the problem. Clarify who the product is for, what they need to do, and what a useful first version should make possible.</p><dl><dt>Questions to resolve</dt><dd>Audience and context.<br>Core journeys and priorities.<br>A clear scope for the first release.</dd></dl></div></details>
-        <details><summary><span class="number" aria-hidden="true">02</span><span class="discipline">Design.</span><span class="indicator" aria-hidden="true"></span></summary><div class="process-body"><p>Make the idea tangible. Explore structure, language, and interaction in a working prototype so that decisions can be experienced and discussed.</p><dl><dt>Details to work through</dt><dd>Information and navigation.<br>Visual direction and interaction.<br>Responsive layouts and accessible states.</dd></dl></div></details>
+        <details><summary><span class="number" aria-hidden="true">02</span><span class="discipline">Design.</span><span class="indicator" aria-hidden="true"></span></summary><div class="process-body"><p>Make the idea tangible. Explore structure, language, and interaction in a working prototype so decisions can be experienced and discussed.</p><dl><dt>Details to work through</dt><dd>Information and navigation.<br>Visual direction and interaction.<br>Responsive layouts and accessible states.</dd></dl></div></details>
         <details><summary><span class="number" aria-hidden="true">03</span><span class="discipline">Build.</span><span class="indicator" aria-hidden="true"></span></summary><div class="process-body"><p>Carry the design into working software. Connect the essential pieces, test real journeys, and refine the details that shape everyday use.</p><dl><dt>Work toward delivery</dt><dd>Implementation and integration.<br>Keyboard, touch, and browser checks.<br>Release preparation and handoff.</dd></dl></div></details>
       </div>
     </section>
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
-      <p class="section-label">03 / Contact</p><div><h2 id="contact-heading">Have something<br>in mind?</h2><p class="contact-intro">A problem to untangle, a website to rethink, or a product to bring into focus.</p><p class="contact-note" id="contact-status">Contact details are being confirmed. This site does not currently accept inquiries.</p><a class="contact-link" id="contact-link" hidden>Start a conversation <span aria-hidden="true">↗</span></a></div>
-      <footer class="footer-line"><span>NCUHOME · Independent digital studio</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+    <section class="booking section-shell" id="book-call" aria-labelledby="booking-heading">
+      <span id="contact" class="anchor-alias" aria-hidden="true"></span>
+      <div class="booking-intro reveal">
+        <p class="section-label">03 / Book a call</p>
+        <h2 id="booking-heading">Have something<br>in mind?</h2>
+        <p class="booking-description">A problem to untangle, a website to rethink, or a product to bring into focus. Start with a conversation.</p>
+        <p class="preview-note" id="preview-note">Prepare a request here; sending and reservations aren’t connected yet.</p>
+        <a class="contact-link text-link" id="contact-link" hidden>Contact the studio <span class="directional" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="booking-panel reveal">
+        <ol class="booking-progress" aria-label="Call request progress">
+          <li data-progress="1" aria-current="step"><span class="step-number" aria-hidden="true">01</span> Project</li>
+          <li data-progress="2"><span class="step-number" aria-hidden="true">02</span> Details</li>
+          <li data-progress="3"><span class="step-number" aria-hidden="true">03</span> Review</li>
+        </ol>
+        <noscript><p class="no-script">Enable JavaScript to prepare and download a call request.</p></noscript>
+        <form id="booking-form" novalidate aria-describedby="preview-note">
+          <fieldset class="booking-fields" id="booking-fields" disabled>
+            <legend class="visually-hidden">Prepare a call request</legend>
+            <section class="booking-step" data-step="1" aria-labelledby="project-step-heading">
+              <h3 id="project-step-heading" tabindex="-1">Your project &amp; preferred time</h3>
+              <p class="step-hint">All fields are required unless marked optional.</p>
+              <div class="fields">
+                <div class="field"><label for="project-type">What are you working on?</label><select id="project-type" name="projectType" required><option value="">Choose a project type</option><option value="website">Website</option><option value="software">Custom software</option><option value="design">Product design</option></select><p class="field-error" id="project-type-error" hidden></p></div>
+                <div class="field-pair">
+                  <div class="field"><label for="preferred-date">Preferred date</label><input id="preferred-date" name="preferredDate" type="date" required max="9999-12-31" aria-describedby="date-hint"><p class="field-hint" id="date-hint">Choose a future date.</p><p class="field-error" id="preferred-date-error" hidden></p></div>
+                  <div class="field"><label for="preferred-time">Preferred time</label><input id="preferred-time" name="preferredTime" type="time" step="60" required><p class="field-error" id="preferred-time-error" hidden></p></div>
+                </div>
+                <div class="field"><label for="time-zone">Time zone</label><select id="time-zone" name="timeZone" required aria-describedby="zone-hint"><option value="UTC">UTC</option></select><p class="field-hint" id="zone-hint">Times are in UTC.</p><p class="field-error" id="time-zone-error" hidden></p></div>
+              </div>
+              <div class="form-actions form-actions-next"><button class="button button-primary" type="submit">Continue <span class="directional" aria-hidden="true">→</span></button></div>
+            </section>
+            <section class="booking-step" data-step="2" aria-labelledby="details-step-heading" hidden>
+              <h3 id="details-step-heading" tabindex="-1">Your details</h3>
+              <p class="step-hint" id="preference-summary"></p>
+              <div class="fields">
+                <div class="field"><label for="request-name">Name</label><input id="request-name" name="name" type="text" autocomplete="name" maxlength="120" required dir="auto"><p class="field-error" id="request-name-error" hidden></p></div>
+                <div class="field"><label for="request-email">Email</label><input id="request-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" autocapitalize="none" maxlength="254" required dir="auto"><p class="field-error" id="request-email-error" hidden></p></div>
+                <div class="field"><label for="request-company">Company <span class="optional">(optional)</span></label><input id="request-company" name="company" type="text" autocomplete="organization" maxlength="160" dir="auto"><p class="field-error" id="request-company-error" hidden></p></div>
+                <div class="field"><label for="request-context">A little about the project <span class="optional">(optional)</span></label><textarea id="request-context" name="context" rows="3" maxlength="1200" aria-describedby="context-hint" dir="auto"></textarea><p class="field-hint" id="context-hint">What would you like to make possible?</p><p class="field-error" id="request-context-error" hidden></p></div>
+              </div>
+              <div class="form-actions"><button class="text-button" type="button" id="booking-back"><span class="directional" aria-hidden="true">←</span> Back</button><button class="button button-primary" type="submit">Review request <span class="directional" aria-hidden="true">→</span></button></div>
+            </section>
+          </fieldset>
+        </form>
+        <section class="booking-step request-review" data-step="3" aria-labelledby="review-step-heading" hidden>
+          <h3 id="review-step-heading" tabindex="-1">Review your request</h3>
+          <p class="review-note">Prepared on this device. It hasn’t been sent, and no time is reserved.</p>
+          <div class="review-group"><div class="review-group-heading"><h4>Project &amp; time</h4><button class="text-button" type="button" id="edit-project">Edit project</button></div><dl class="review-values"><div><dt>Project</dt><dd><bdi id="review-project"></bdi></dd></div><div><dt>Preferred date</dt><dd><time id="review-date"></time></dd></div><div><dt>Preferred time</dt><dd><bdi id="review-time"></bdi></dd></div><div><dt>Time zone</dt><dd><bdi id="review-zone"></bdi></dd></div></dl></div>
+          <div class="review-group"><div class="review-group-heading"><h4>Your details</h4><button class="text-button" type="button" id="edit-details">Edit details</button></div><dl class="review-values"><div><dt>Name</dt><dd><bdi id="review-name"></bdi></dd></div><div><dt>Email</dt><dd><bdi id="review-email"></bdi></dd></div><div><dt>Company</dt><dd><bdi id="review-company"></bdi></dd></div><div class="context-value"><dt>Project context</dt><dd><bdi id="review-context"></bdi></dd></div></dl></div>
+          <div class="download-actions"><a class="button button-primary" id="download-request" download>Download request <span aria-hidden="true">↓</span></a><p class="field-hint">A text file to keep for your records.</p></div>
+          <details class="download-recovery" id="download-recovery" hidden><summary>Copy the request text</summary><pre id="request-text" tabindex="0"></pre></details>
+        </section>
+        <p class="request-status" id="request-status" role="status" aria-atomic="true"></p>
+      </div>
+      <footer class="footer-line"><span>NCUHOME · Independent digital studio</span><a class="text-link" href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
     </section>
   </main>
 </body>
