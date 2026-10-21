@@ -161,7 +161,7 @@
       recovery.open = true;
     }
     showStep(3);
-    if (!fileUrl) status.textContent = 'Unable to create the file. Copy the request text below to keep it.';
+    if (!fileUrl) status.textContent = 'Unable to create the file. Copy the request text to keep it.';
   }
   function advance() {
     if (currentStep === 3) return;

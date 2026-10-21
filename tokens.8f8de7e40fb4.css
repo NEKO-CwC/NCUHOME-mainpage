@@ -30,6 +30,8 @@
   --control-height: 48px;
   --control-radius: 24px;
   --field-radius: 4px;
+  --request-inset-compact: clamp(12px, 4vw, 20px);
+  --field-inset-compact: clamp(8px, 2.5vw, 12px);
   --control-gap: 12px;
   --column-gap: clamp(2rem, 6vw, 5.5rem);
   --border-width: 1px;

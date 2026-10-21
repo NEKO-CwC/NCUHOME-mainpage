@@ -13,7 +13,7 @@ h3:focus-visible { outline: var(--focus-width) solid var(--focus); outline-offse
 ::selection { background: var(--selection); color: var(--ink); }
 p { margin: 0; text-wrap: pretty; }
 h1, h2, h3, h4 { margin: 0; font-weight: 400; text-wrap: balance; }
-a, button, p, h1, h2, h3, h4, dt, dd { overflow-wrap: anywhere; }
+a, button, p, h1, h2, h3, h4, dt, dd, .discipline { overflow-wrap: anywhere; }
 .visually-hidden { position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip { position: absolute; inset-inline-start: 1.25rem; inset-block-start: -10rem; background: var(--ink); color: var(--paper); padding: .875rem 1.25rem; z-index: 10; }
 .skip:focus { inset-block-start: 1rem; outline-color: var(--paper); }
@@ -100,7 +100,7 @@ input[type="date"], input[type="time"] { min-inline-size: 0; }
 input[type="date"]::-webkit-date-and-time-value, input[type="time"]::-webkit-date-and-time-value { text-align: start; }
 textarea { resize: vertical; }
 select { padding-inline-end: 2rem; }
-.field-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+.field-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; }
 .field-hint { margin-block-start: .5rem; font-size: var(--type-meta); line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
 .field-error { margin-block-start: .5rem; font-size: var(--type-meta); line-height: 1.5; color: var(--error); }
 [aria-invalid="true"] { border-color: var(--error); }
@@ -208,7 +208,10 @@ select { padding-inline-end: 2rem; }
   .studio-text p { font-size: 1.125rem; }
   .process summary { min-block-size: 92px; }
   .process-body p { font-size: 1rem; }
-  .booking-panel { padding: 1.25rem; }
+  .booking { padding-inline: var(--request-inset-compact); }
+  .booking-panel { padding: 1.25rem var(--request-inset-compact); }
+  .booking .button { padding-inline: var(--request-inset-compact); }
+  input[type="date"], input[type="time"] { padding-inline: var(--field-inset-compact); }
   .booking-progress { gap: .5rem 1rem; }
   .booking-intro h2 { font-size: 3rem; }
   .field-pair { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
